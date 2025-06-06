@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>admine page</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruiru Media House</title>
+    <!-- You would link your CSS file here if it were a separate file: -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- For Codepen, you'll paste CSS directly into the CSS panel. -->
+</head>
+<body>
+    <div class="container">
+        <!-- Mobile Navigation (Sidebar) -->
+        <div class="mobile-nav">
+            <header>
+                <h1>Ruiru Media House</h1>
+                <div class="header-actions">
+                    <button class="search-btn">Search sermons</button>
+                    <button class="upload-btn">Upload</button>
+                </div>
+            </header>
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="#" class="nav-item active" data-section="home">
+                        <!-- Replace with actual icons or use Font Awesome/SVG -->
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=H" alt="Home Icon"> Home
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="sermons">
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=S" alt="Sermons Icon"> Sermons LIVE
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="entertainment">
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=E" alt="Entertainment Icon"> Entertainment
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="bible-study">
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=B" alt="Bible Study Icon"> Bible Study
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="events">
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=V" alt="Events Icon"> Events
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="announcement">
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=A" alt="Announcement Icon"> Announcement
+                    </a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Area (Desktop/Tablet View) -->
+        <div class="main-content">
+            <header class="main-header">
+                <button class="menu-toggle">
+                    <img src="https://placehold.co/24x24/cccccc/000000?text=☰" alt="Menu Toggle Icon">
+                </button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search sermons, events...">
+                    <button class="search-icon">
+                        <img src="https://placehold.co/20x20/cccccc/000000?text=🔍" alt="Search Icon">
+                    </button>
+                </div>
+                <button class="upload-btn-desktop">
+                    <img src="https://placehold.co/18x18/cccccc/000000?text=⬆" alt="Upload Icon"> Upload
+                </button>
+            </header>
+
+            <main class="content-display">
+                <!-- Content will be loaded here dynamically or based on initial local storage -->
+                <section id="home-section" class="content-section active">
+                    <div class="welcome-card">
+                        <div class="icon-placeholder"></div>
+                        <h2>Welcome to Ruiru Media House</h2>
+                        <p>Add live streams, music, videos, or Bible study materials here.</p>
+                    </div>
+                    <!-- Existing content will be populated here -->
+                </section>
+
+                <section id="sermons-section" class="content-section">
+                    <h2>Sermons LIVE</h2>
+                    <div id="sermons-container" class="content-list"></div>
+                    <button class="add-content-btn" data-section="sermons">Add New Sermon</button>
+                </section>
+
+                <section id="entertainment-section" class="content-section">
+                    <h2>Entertainment</h2>
+                    <div id="entertainment-container" class="content-list"></div>
+                    <button class="add-content-btn" data-section="entertainment">Add New Entertainment</button>
+                </section>
+
+                <section id="bible-study-section" class="content-section">
+                    <h2>Bible Study</h2>
+                    <div id="bible-study-container" class="content-list"></div>
+                    <button class="add-content-btn" data-section="bible-study">Add New Bible Study</button>
+                </section>
+
+                <section id="events-section" class="content-section">
+                    <h2>Events</h2>
+                    <div id="events-container" class="content-list"></div>
+                    <button class="add-content-btn" data-section="events">Add New Event</button>
+                </section>
+
+                <section id="announcement-section" class="content-section">
+                    <h2>Announcements</h2>
+                    <div id="announcement-container" class="content-list"></div>
+                    <button class="add-content-btn" data-section="announcement">Add New Announcement</button>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal for adding new content -->
+    <div id="addContentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add New Content</h2>
+            <form id="addContentForm">
+                <label for="contentType">Content Type:</label>
+                <input type="text" id="contentType" readonly> <!-- Will be set by JS -->
+
+                <label for="contentTitle">Title:</label>
+                <input type="text" id="contentTitle" required>
+
+                <label for="contentDescription">Description:</label>
+                <textarea id="contentDescription"></textarea>
+
+                <label for="contentURL">URL (Optional, for video/audio):</label>
+                <input type="url" id="contentURL">
+
+                <button type="submit">Save Content</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- You would link your JavaScript file here if it were a separate file: -->
+    <!-- <script src="script.js"></script> -->
+    <!-- For Codepen, you'll paste JS directly into the JS panel. -->
+</body>
+</html>
+<!-- partial -->
+  <script type="module" src="./script.js"></script>
+
+</body>
+</html>

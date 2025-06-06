@@ -1,0 +1,592 @@
+/* Define CSS Variables for easy theme customization */
+:root {
+    --primary-color: #3498db; /* A blue color for primary actions and accents */
+    --secondary-color: #2c3e50; /* A dark blue/grey for backgrounds like sidebar */
+    --background-color: #f0f2f5; /* Light grey for general page background */
+    --text-color: #333; /* Dark grey for general text */
+    --card-background: #ffffff; /* White for content cards and main background */
+    --border-color: #ddd; /* Light grey for borders */
+}
+
+/* Basic Reset and Global Styles */
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures content is centered vertically on larger screens */
+    color: var(--text-color);
+}
+
+/* Main Container Layout */
+.container {
+    display: flex; /* Use flexbox for side-by-side layout (sidebar and main content) */
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the entire application */
+    background-color: var(--card-background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px; /* Rounded corners for the main container */
+    overflow: hidden; /* Ensures content respects border-radius */
+}
+
+/* Mobile Navigation (Sidebar) Styling */
+.mobile-nav {
+    width: 280px; /* Fixed width for the sidebar on desktop */
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the width */
+    display: flex;
+    flex-direction: column; /* Stack header and nav vertically */
+}
+
+.mobile-nav header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mobile-nav h1 {
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: bold;
+}
+
+.mobile-nav .header-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.mobile-nav .header-actions button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px; /* Rounded buttons */
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav .header-actions button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Sidebar Navigation List */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 8px; /* Spacing between nav items */
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Rounded nav items */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.1em;
+}
+
+.sidebar a img {
+    margin-right: 12px;
+    width: 22px; /* Adjust icon size */
+    height: 22px;
+    filter: invert(1); /* Makes placeholder icons white on dark background */
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white on hover/active */
+    transform: translateX(5px); /* Slight slide effect */
+}
+
+/* Main Content Area Styling */
+.main-content {
+    flex-grow: 1; /* Allows main content to take remaining space */
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: var(--background-color); /* Matches body background */
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop, shown on mobile */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.menu-toggle img {
+    width: 28px;
+    height: 28px;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1; /* Allows search bar to expand */
+    margin: 0 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px; /* More rounded search bar */
+    overflow: hidden;
+    background-color: var(--card-background);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 18px;
+    border: none;
+    outline: none; /* Remove outline on focus */
+    font-size: 1em;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.upload-btn-desktop {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.upload-btn-desktop img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Makes icon white */
+}
+
+.upload-btn-desktop:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Content Display Area */
+.content-display {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: 10px;
+    min-height: 550px; /* Ensure enough height for content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.content-section {
+    display: none; /* Hidden by default, shown by JS when active */
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Welcome Card Styling */
+.welcome-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px; /* Ensure it's visually prominent */
+}
+
+.welcome-card .icon-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%; /* Circular placeholder */
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    /* You can replace this with an actual SVG icon or image */
+}
+
+.welcome-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.welcome-card p {
+    color: var(--text-color);
+    line-height: 1.7;
+    max-width: 600px;
+    font-size: 1.1em;
+}
+
+/* Content List Styling */
+.content-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 25px; /* Spacing between grid items */
+    margin-top: 25px;
+}
+
+.content-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease;
+    position: relative; /* For delete button positioning */
+}
+
+.content-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.content-item h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.content-item p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.content-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.content-item a:hover {
+    color: #2980b9;
+}
+
+.add-content-btn {
+    background-color: #28a745; /* Green for add button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    display: block; /* Make it a block element to center */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-content-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+.delete-content-btn {
+    background-color: #dc3545; /* Red for delete button */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+    position: absolute; /* Position relative to content-item */
+    bottom: 15px;
+    right: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-content-btn:hover {
+    background-color: #c82333;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.6); /* Black background with more opacity */
+    display: flex; /* Use flex to center content */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding to prevent content from touching edges */
+    box-sizing: border-box;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* Responsive width */
+    max-width: 550px; /* Max width for the modal */
+    border-radius: 12px; /* Rounded corners for modal */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="url"],
+.modal-content form textarea {
+    width: calc(100% - 24px); /* Account for padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.modal-content form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+.modal-content form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right; /* Align to the right */
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* New CSS for Responsive Video Embeds */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height / width = 9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    margin-top: 15px; /* Space above video */
+    margin-bottom: 15px; /* Space below video */
+    border-radius: 8px; /* Rounded corners for the video iframe */
+    background-color: #000; /* Black background for video placeholder */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        box-shadow: none; /* Remove shadow for full mobile experience */
+        border-radius: 0;
+    }
+
+    .mobile-nav {
+        width: 100%;
+        padding: 15px;
+        position: fixed; /* Make it stick to the top */
+        top: 0;
+        left: 0;
+        z-index: 100; /* Ensure it's above other content */
+        height: auto; /* Allow height to adjust based on content */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border-radius: 0; /* No rounded corners for fixed header */
+    }
+
+    .mobile-nav header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .mobile-nav h1 {
+        font-size: 1.5em;
+    }
+
+    .mobile-nav .header-actions {
+        /* This rule is intentionally left out in the viewer page's CSS,
+           but will be present in the admin page's mobile nav header. */
+    }
+
+    .sidebar {
+        display: none; /* Hide the sidebar by default in mobile */
+        max-height: 0; /* Used for smooth transition when opening */
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .sidebar.active {
+        display: block; /* Show sidebar when active */
+        max-height: 400px; /* Adjust based on content height */
+    }
+
+    .main-content {
+        margin-top: 100px; /* Make space for the fixed mobile header */
+        padding: 15px;
+    }
+
+    .main-header {
+        position: fixed; /* Make it stick to the top */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-background);
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 99; /* Below mobile-nav but above main content */
+        margin-bottom: 0; /* Remove default margin */
+        box-sizing: border-box;
+        border-bottom: none; /* Remove border for cleaner look */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle button on mobile */
+    }
+
+    .search-bar {
+        margin: 0 10px;
+    }
+
+    .upload-btn-desktop {
+        /* This rule is intentionally left out in the viewer page's CSS */
+    }
+
+    .content-display {
+        margin-top: 20px; /* Space below fixed header */
+        padding: 15px;
+    }
+
+    .welcome-card {
+        padding: 25px;
+    }
+
+    .welcome-card .icon-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .welcome-card h2 {
+        font-size: 1.5em;
+    }
+
+    .welcome-card p {
+        font-size: 0.9em;
+    }
+
+    .content-list {
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 15px;
+    }
+
+    .modal-content {
+        width: 95%; /* Wider modal on smaller screens */
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-content form button[type="submit"] {
+        width: 100%; /* Full width button in modal */
+        float: none; /* Remove float */
+    }
+}
